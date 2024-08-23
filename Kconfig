@@ -1,0 +1,78 @@
+menu "VL53L5CX multi-zone sensor"
+
+config VL53L5CX_NB_TARGET_PER_ZONE
+    int "Number of target per zone"
+    range 1 4
+    default 1
+    help
+        The configuration is used to define the number of target per zone sent
+        through I2C. This value can be changed by user, in order to tune I2C
+        transaction, and also the total memory size (a lower number of target per
+        zone means a lower RAM). The value must be between 1 and 4.
+
+    menu "Result data"        
+        config VL53L5CX_ENABLE_AMBIENT_PER_SPAD
+            bool "Ambient noise in kcps/spads"
+            default y
+            help
+                Ambient rate measurement performed on the
+                SPAD array, with no active photon emission, to
+                measure the ambient signal rate due to noise
+
+        config VL53L5CX_ENABLE_NB_TARGET_DETECTED
+            bool "Number of targets detected"
+            default y
+            help
+                Number of detected targets in the current zone.
+                This value should be the first one to check to
+                know a measurement validity.
+        
+        config VL53L5CX_ENABLE_NB_SPADS_ENABLED
+            bool "Number of SPADs enabled"
+            default n
+            help
+                Number of SPADs enabled for the current
+                measurement. A far or low reflective target
+                activates more SPADs.
+
+        config VL53L5CX_ENABLE_SIGNAL_PER_SPAD
+            bool "Signal per SPAD"
+            default n
+            help
+                Quantity of photons measured during the VCSEL
+                pulse.
+                
+        config VL53L5CX_ENABLE_RANGE_SIGMA_MM
+            bool "Range sigma"
+            default n
+            help
+                Disable result data for:
+                'Sigma of the current distance in mm'
+                
+        config VL53L5CX_ENABLE_DISTANCE_MM
+            bool "Distance"
+            default y
+            help
+                Target distance
+                
+        config VL53L5CX_ENABLE_TARGET_STATUS
+            bool "Target status"
+            default y
+            help
+                Measurements validity
+                
+        config VL53L5CX_ENABLE_REFLECTANCE_PERCENT
+            bool "Reflectance"
+            default n
+            help
+                Estimated target reflectance in percent
+                
+        config VL53L5CX_ENABLE_MOTION_INDICATOR
+            bool "Motion indicator"
+            default n
+            help
+                Structure containing the motion indicator results.
+                The field 'motion' contains the motion intensity
+    endmenu
+
+endmenu
