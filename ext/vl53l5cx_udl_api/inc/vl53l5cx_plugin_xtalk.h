@@ -15,6 +15,11 @@
 
 #include "vl53l5cx_api.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /**
  * @brief Inner internal number of targets.
  */
@@ -387,5 +392,9 @@ static const uint8_t VL53L5CX_CALIBRATE_XTALK[] = {
 	0x00, 0x00, 0x00, 0x0F,
 	0x00, 0x01, 0x03, 0xD4
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* VL53L5CX_PLUGIN_XTALK_H_ */

@@ -22,6 +22,10 @@
 
 #include <driver/i2c_types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @brief Structure VL53L5CX_Platform needs to be filled by the customer,
  * depending on his platform. At least, it contains the VL53L5CX I2C address.
@@ -205,5 +209,10 @@ void VL53L5CX_SwapBuffer(
 uint8_t VL53L5CX_WaitMs(
 		VL53L5CX_Platform *p_platform,
 		uint32_t TimeMs);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif	// _PLATFORM_H_

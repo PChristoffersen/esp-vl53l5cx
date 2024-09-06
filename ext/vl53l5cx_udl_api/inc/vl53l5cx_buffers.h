@@ -17,6 +17,11 @@
 
 #include "vl53l5cx_platform.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /**
  * @brief Inner internal number of targets.
  */
@@ -22007,6 +22012,11 @@ const uint8_t VL53L5CX_GET_NVM_CMD[] = {
 	0x00, 0x00, 0x00, 0x0F,
 	0x02, 0x02, 0x00, 0x24
 };
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* VL53L5CX_BUFFERS_H_ */
 	

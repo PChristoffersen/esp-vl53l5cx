@@ -15,6 +15,11 @@
 
 #include "vl53l5cx_api.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /**
  * @brief Macro VL53L5CX_NB_THRESHOLDS indicates the number of checkers. This
  * value cannot be changed.
@@ -142,5 +147,9 @@ uint8_t vl53l5cx_get_detection_thresholds(
 uint8_t vl53l5cx_set_detection_thresholds(
 		VL53L5CX_Configuration		*p_dev,
 		VL53L5CX_DetectionThresholds	*p_thresholds);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* VL53L5CX_PLUGIN_DETECTION_THRESHOLDS_H_ */

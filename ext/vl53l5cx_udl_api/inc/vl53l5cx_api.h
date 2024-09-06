@@ -21,6 +21,10 @@
 
 #include "vl53l5cx_platform.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @brief Current driver version.
  */
@@ -739,5 +743,9 @@ uint8_t vl53l5cx_dci_replace_data(
 		uint8_t				*new_data,
 		uint16_t			new_data_size,
 		uint16_t			new_data_pos);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //VL53L5CX_API_H_
